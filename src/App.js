@@ -1,11 +1,12 @@
 import './App.css';
 import Header from './components/Header';
+import DatingCards from './components/DatingCards';
 
 function App() {
   return (
     <div className="App">
-      <h1>Insoo's Dating App MERN</h1>
 			<Header/>	
+			<DatingCards/>
     </div>
   );
 }
