@@ -1,6 +1,6 @@
 import './App.css';
-import Header from './components/Header';
-import DatingCards from './components/DatingCards';
+import Header from './cmp/Header';
+import DatingCards from './cmp/DatingCards';
 
 function App() {
   return (

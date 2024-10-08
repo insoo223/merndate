@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DatingCard from 'react-tinder-card';
+import TinderCard from 'react-tinder-card';
 import './DatingCards.css'
 
 const DatingCards = () => {
@@ -8,6 +8,7 @@ const DatingCards = () => {
       { name: "Another Girl", imgUrl: "https://images.unsplash.com/photo-1602693130555-a1a37fda607b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGJsYWNrJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=634&q=80" },
       { name: "Random Guy", imgUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" },
       { name: "Another Guy", imgUrl: "https://images.unsplash.com/photo-1601576084861-5de423553c0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MzF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=634&q=80" },
+      { name: "ChinaGrp", imgUrl: "https://i.postimg.cc/3rkSNTYw/2024-09-10-113845.png" },
 		]);
 	const swiped = (direction, nameToDelete) => {
         console.log("receiving " + nameToDelete)
@@ -19,7 +20,7 @@ const DatingCards = () => {
         <div className="datingCards">
         	<div className="datingCards_container">
         		{people.map((person) => (
-           		 <DatingCard
+           		 <TinderCard
 		           	className="swipe"
    		         	key={person.name}
      		       	preventSwipe={['up', 'down']}
@@ -28,7 +29,7 @@ const DatingCards = () => {
            		 	<div style={{ backgroundImage: `url(${person.imgUrl})`}} className="card">
                 	<h3>{person.name}</h3>  
              		</div>
-              </DatingCard>
+              </TinderCard>
             ))}
         	</div>
         </div>

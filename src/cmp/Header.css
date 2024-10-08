@@ -1,7 +1,7 @@
 .header {
 	display: flex;
 	align-items: center;
-	justify-context: space-between;
+	justify-content: space-between;
 	z-index: 100;
 	border-bottom: 1px solid #f9f9f9;
 }
