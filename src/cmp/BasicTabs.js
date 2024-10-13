@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import BasicMenu from './BasicMenu';
+import FormikCard from './FormikCard';
+import DatingCards from './DatingCards';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,12 +54,15 @@ export default function BasicTabs() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         Item One
+        <BasicMenu/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two
+        <FormikCard/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         Item Three
+        <DatingCards/>
       </CustomTabPanel>
     </Box>
   );

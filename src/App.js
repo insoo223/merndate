@@ -1,20 +1,13 @@
 import './App.css';
-//import Header from './cmp/Header';
 import BasicTabs from './cmp/BasicTabs';
-// import BasicMenu from './cmp/BasicMenu';
-// import PostCard from './cmp/PostCard';
-// import FormikCard from './cmp/FormikCard';
-// import DatingCards from './cmp/DatingCards';
-// import SwipeButtons from './cmp/SwipeButtons';
+import Layout from './cmp/Layout';
 
 function App() {
   return (
     <div className="App">
+		<Layout>
 			<BasicTabs/>
-			{/* <BasicMenu/>	
-			<FormikCard/>
-			<DatingCards/>
-			<SwipeButtons/> */}
+		</Layout>
     </div>
   );
 }
