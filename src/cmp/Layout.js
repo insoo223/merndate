@@ -1,14 +1,16 @@
-import Header from './Header';
-import SwipeButtons from './SwipeButtons';
+// import Header from './Header';
+import AncTmpDrw from './AncTmpDrw';
+// import SwipeButtons from './SwipeButtons';
 
 const Layout = ({children}) => {
 	return (
 		<div>
-			<Header/>	
+			{/* <Header/>	 */}
+			<AncTmpDrw/>
 			<main>
 				{children}
 			</main>
-			<SwipeButtons/>	
+			{/* <SwipeButtons/>	 */}
 		</div>
 	)
 }
