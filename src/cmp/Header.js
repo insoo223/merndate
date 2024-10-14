@@ -10,7 +10,8 @@ const Header = () => {
 			<IconButton>
 				<PersonIcon fontSize='large' className='header_icon'/>	
 			</IconButton>
-			<img className='header_logo' src='logo192.png' alt='header'/>	
+			{/* <img className='header_logo' src='logo192.png' alt='header'/>	 */}
+			<img className='header_logo' src='Logo Char YMD-947457066.png' alt='logo'/>	
 			<IconButton>
 				<ForumIcon fontSize='large' className='header_icon'/>	
 			</IconButton>

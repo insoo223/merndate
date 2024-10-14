@@ -2,14 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import ListMenu from './ListMenu';
 
 export default function AncTmpDrw() {
   const [state, setState] = React.useState({
@@ -27,44 +21,34 @@ export default function AncTmpDrw() {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+  const strAnchor = ['Admin', 'PAT', 'SmartFarm', 'CEO'];
+  const strCommon = ['All mail', 'Trash', 'Spam'];
+  const strMenu = [
+    ['Admin1', 'Admin2', 'Admin3', 'Admin4'],
+    ['PAT1', 'PAT2', 'PAT3', 'PAT4'],
+    ['SF1', 'SF2', 'SF3', 'SF4'],
+    ['CEO1', 'CEO2', 'CEO3', 'CEO4'],
+  ];
+
+  const list = (anchor) => {
+    let idx = strAnchor.findIndex(a => a === anchor);
+    return (
+      <Box
+        sx={{ width: anchor === 'SmartFarm' || anchor === 'CEO' ? 'auto' : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <ListMenu menu={ strMenu[idx]}/>
+        <Divider />
+        <ListMenu menu={ strCommon}/>
+      </Box>
+    ) // return
+  }; // list
 
   return (
     <div>
-      {['left', 'right', 'top', 'bottom'].map((anchor) => (
+      {strAnchor.map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <Drawer
@@ -72,10 +56,10 @@ export default function AncTmpDrw() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
           >
-            {list(anchor)}
+            { list(anchor) }
           </Drawer>
         </React.Fragment>
       ))}
     </div>
-  );
-}
+  ); // return
+} // AncTmpDrw
