@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import BasicMenu from './cmp/BasicMenu';
-import FormikCard from './cmp/FormikCard';
+import RteFormik from './cmp/RteFormik';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "Admin1/",
-    element: <FormikCard />,
+    element: <RteFormik/>,
   },  
   {
     path: "Admin2/",
