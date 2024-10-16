@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import BasicMenu from './cmp/BasicMenu';
 import RteFormik from './cmp/RteFormik';
+import RteGDLike from './cmp/RteGDLike';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import RteLogin from './cmp/RteLogin';
 
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
     path: "auth/google/",
     element: <RteLogin />,
   },    
-]);
+  {
+    path: "docs/:id",
+    element: <RteGDLike />,
+  },    
+  ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
