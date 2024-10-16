@@ -5,6 +5,8 @@ import './index.css';
 import App from './App';
 import BasicMenu from './cmp/BasicMenu';
 import RteFormik from './cmp/RteFormik';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import RteLogin from './cmp/RteLogin';
 
 const router = createBrowserRouter([
   {
@@ -19,13 +21,19 @@ const router = createBrowserRouter([
     path: "Admin2/",
     element: <BasicMenu />,
   },    
+  {
+    path: "auth/google/",
+    element: <RteLogin />,
+  },    
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <GoogleOAuthProvider clientId="671892678478-3m5fo3malfb0bkcsk5ic2bf2mmhq2cg3.apps.googleusercontent.com">
+    <React.StrictMode>
+      {/* <App /> */}
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </GoogleOAuthProvider>        
 );
 
